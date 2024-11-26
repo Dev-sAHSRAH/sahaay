@@ -27,8 +27,7 @@ def install_package(package):
 
 # List of required packages
 REQUIRED_PACKAGES = [
-    "streamlit", "langchain", "langchain_community", "langchain-huggingface", "tiktoken", "pandas"
-]
+    "streamlit", "langchain", "langchain_community", "langchain-huggingface"]
 
 # Prompt template
 PROMPT_TEMPLATE = """
