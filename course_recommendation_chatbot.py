@@ -16,7 +16,14 @@ from langchain.schema import Document
 
 # Package installation function
 def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+    try:
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+        print(f"Package '{package}' installed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error: Failed to install package '{package}'.")
+        print(f"Details: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred while installing package '{package}': {e}")
 
 # List of required packages
 REQUIRED_PACKAGES = [
