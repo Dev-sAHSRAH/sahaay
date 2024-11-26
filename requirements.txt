@@ -3,3 +3,6 @@ langchain
 langchain_community
 langchain_huggingface
 langchain-google-genai
+pandas
+streamlit
+faiss-cpu
