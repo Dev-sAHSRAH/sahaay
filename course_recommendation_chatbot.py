@@ -20,8 +20,7 @@ def install_package(package):
 
 # List of required packages
 REQUIRED_PACKAGES = [
-    "streamlit", "langchain", "langchain_community", "langchain-huggingface",
-    "faiss-cpu", "openai", "tiktoken", "pandas"
+    "streamlit", "langchain", "langchain_community", "langchain-huggingface", "openai", "tiktoken", "pandas"
 ]
 
 # Prompt template
