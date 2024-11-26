@@ -14,20 +14,6 @@ from langchain.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings  # Updated import
 from langchain.schema import Document
 
-# Package installation function
-def install_package(package):
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-        print(f"Package '{package}' installed successfully.")
-    except subprocess.CalledProcessError as e:
-        print(f"Error: Failed to install package '{package}'.")
-        print(f"Details: {e}")
-    except Exception as e:
-        print(f"An unexpected error occurred while installing package '{package}': {e}")
-
-# List of required packages
-REQUIRED_PACKAGES = [
-    "streamlit", "langchain", "langchain_community", "langchain-huggingface"]
 
 # Prompt template
 PROMPT_TEMPLATE = """
@@ -132,15 +118,6 @@ def main():
     load_dotenv()
     GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
     print(GEMINI_API_KEY)
-
-    # Check and install required packages
-    for package in REQUIRED_PACKAGES:
-        try:
-            __import__(package)
-        except ImportError:
-            print(f"{package} not found. Installing...")
-            install_package(package)
-    print("All required packages are installed.")
     
     # Streamlit app setup
     st.set_page_config(page_title="Course Recommendation Chatbot", page_icon=":book:")
