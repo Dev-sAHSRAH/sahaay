@@ -4,5 +4,9 @@ langchain_community
 langchain_huggingface
 langchain-google-genai
 pandas
+tiktoken
+faiss-cpu
+
+pandas
 streamlit
 faiss-cpu
